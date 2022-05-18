@@ -15,7 +15,6 @@ SOURCES += \
     jsonreader.cpp \
     lesson.cpp \
     main.cpp \
-    main.cpp \
     mainwindow.cpp \
     mybrowser.cpp \
     online.cpp \
