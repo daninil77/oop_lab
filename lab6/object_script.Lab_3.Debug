@@ -1,0 +1,13 @@
+debug/abstractreader.o
+debug/csvreader.o
+debug/csvwriter.o
+debug/jsonreader.o
+debug/lesson.o
+debug/main.o
+debug/main.o
+debug/mainwindow.o
+debug/mybrowser.o
+debug/online.o
+debug/ordinary.o
+debug/public.o
+debug/moc_mainwindow.o
