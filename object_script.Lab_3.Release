@@ -1,4 +1,5 @@
 release/abstractreader.o
+release/csvexception.o
 release/csvreader.o
 release/csvwriter.o
 release/jsonreader.o

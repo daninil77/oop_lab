@@ -1,4 +1,5 @@
 debug/abstractreader.o
+debug/csvexception.o
 debug/csvreader.o
 debug/csvwriter.o
 debug/jsonreader.o
