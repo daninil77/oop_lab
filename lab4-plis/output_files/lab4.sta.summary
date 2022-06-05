@@ -1,0 +1,69 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'synchronizer:comb_33|q1'
+Slack : -3.574
+TNS   : -26.786
+
+Type  : Slow Model Setup 'CLOCK_50'
+Slack : -0.242
+TNS   : -0.331
+
+Type  : Slow Model Hold 'CLOCK_50'
+Slack : -1.320
+TNS   : -1.320
+
+Type  : Slow Model Hold 'synchronizer:comb_33|q1'
+Slack : 0.445
+TNS   : 0.000
+
+Type  : Slow Model Recovery 'synchronizer:comb_33|q1'
+Slack : -1.163
+TNS   : -18.532
+
+Type  : Slow Model Removal 'synchronizer:comb_33|q1'
+Slack : 1.557
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'CLOCK_50'
+Slack : -1.631
+TNS   : -8.963
+
+Type  : Slow Model Minimum Pulse Width 'synchronizer:comb_33|q1'
+Slack : -0.611
+TNS   : -20.774
+
+Type  : Fast Model Setup 'synchronizer:comb_33|q1'
+Slack : -0.771
+TNS   : -5.081
+
+Type  : Fast Model Setup 'CLOCK_50'
+Slack : 0.474
+TNS   : 0.000
+
+Type  : Fast Model Hold 'CLOCK_50'
+Slack : -0.775
+TNS   : -0.775
+
+Type  : Fast Model Hold 'synchronizer:comb_33|q1'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Recovery 'synchronizer:comb_33|q1'
+Slack : -0.089
+TNS   : -1.002
+
+Type  : Fast Model Removal 'synchronizer:comb_33|q1'
+Slack : 0.869
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'CLOCK_50'
+Slack : -1.380
+TNS   : -7.380
+
+Type  : Fast Model Minimum Pulse Width 'synchronizer:comb_33|q1'
+Slack : -0.500
+TNS   : -17.000
+
+------------------------------------------------------------

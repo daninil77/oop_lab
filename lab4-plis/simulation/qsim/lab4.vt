@@ -1,0 +1,338 @@
+// Copyright (C) 1991-2013 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "04/30/2022 14:23:46"
+                                                                        
+// Verilog Self-Checking Test Bench (with test vectors) for design :    shift_reg_4
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module shift_reg_4_vlg_sample_tst(
+	ISb,
+	clk,
+	dir,
+	en,
+	rst,
+	sampler_tx
+);
+input  ISb;
+input  clk;
+input  dir;
+input  en;
+input  rst;
+output sampler_tx;
+
+reg sample;
+time current_time;
+always @(ISb or clk or dir or en or rst)
+                                                                                
+begin                                                 
+ if ($realtime > 0)                                   
+ begin                                                
+	if ($realtime == 0 || $realtime != current_time)  
+	begin									          
+		if (sample === 1'bx)                          
+			sample = 0;                               
+		else                                          
+			sample = ~sample;                         
+	end										          
+	current_time = $realtime;					      
+ end                                                  
+end                                                   
+
+assign sampler_tx = sample;
+endmodule
+
+module shift_reg_4_vlg_check_tst (
+	OSb,
+	shift_rg,
+	sampler_rx
+);
+input  OSb;
+input [3:0] shift_rg;
+input sampler_rx;
+
+reg  OSb_expected;
+reg [3:0] shift_rg_expected;
+
+reg  OSb_prev;
+reg [3:0] shift_rg_prev;
+
+reg  OSb_expected_prev;
+reg [3:0] shift_rg_expected_prev;
+
+reg  last_OSb_exp;
+reg [3:0] last_shift_rg_exp;
+
+reg trigger;
+
+integer i;
+integer nummismatches;
+
+reg [1:2] on_first_change ;
+
+
+initial
+begin
+trigger = 0;
+i = 0;
+nummismatches = 0;
+on_first_change = 2'b1;
+end
+
+// update real /o prevs
+
+always @(trigger)
+begin
+	OSb_prev = OSb;
+	shift_rg_prev = shift_rg;
+end
+
+// update expected /o prevs
+
+always @(trigger)
+begin
+	OSb_expected_prev = OSb_expected;
+	shift_rg_expected_prev = shift_rg_expected;
+end
+
+
+
+// expected OSb
+initial
+begin
+	OSb_expected = 1'bX;
+	OSb_expected = #999000 1'b0;
+end 
+// expected shift_rg[ 3 ]
+initial
+begin
+	shift_rg_expected[3] = 1'bX;
+	shift_rg_expected[3] = #999000 1'b0;
+end 
+// expected shift_rg[ 2 ]
+initial
+begin
+	shift_rg_expected[2] = 1'bX;
+	shift_rg_expected[2] = #999000 1'b0;
+end 
+// expected shift_rg[ 1 ]
+initial
+begin
+	shift_rg_expected[1] = 1'bX;
+	shift_rg_expected[1] = #999000 1'b0;
+end 
+// expected shift_rg[ 0 ]
+initial
+begin
+	shift_rg_expected[0] = 1'bX;
+	shift_rg_expected[0] = #999000 1'b0;
+end 
+// generate trigger
+always @(OSb_expected or OSb or shift_rg_expected or shift_rg)
+begin
+	trigger <= ~trigger;
+end
+
+always @(posedge sampler_rx or negedge sampler_rx)
+begin
+`ifdef debug_tbench
+	$display("Scanning pattern %d @time = %t",i,$realtime );
+	i = i + 1;
+	$display("| expected OSb = %b | expected shift_rg = %b | ",OSb_expected_prev,shift_rg_expected_prev);
+	$display("| real OSb = %b | real shift_rg = %b | ",OSb_prev,shift_rg_prev);
+`endif
+	if (
+		( OSb_expected_prev !== 1'bx ) && ( OSb_prev !== OSb_expected_prev )
+		&& ((OSb_expected_prev !== last_OSb_exp) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port OSb :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", OSb_expected_prev);
+		$display ("     Real value = %b", OSb_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_OSb_exp = OSb_expected_prev;
+	end
+	if (
+		( shift_rg_expected_prev[0] !== 1'bx ) && ( shift_rg_prev[0] !== shift_rg_expected_prev[0] )
+		&& ((shift_rg_expected_prev[0] !== last_shift_rg_exp[0]) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port shift_rg[0] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", shift_rg_expected_prev);
+		$display ("     Real value = %b", shift_rg_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_shift_rg_exp[0] = shift_rg_expected_prev[0];
+	end
+	if (
+		( shift_rg_expected_prev[1] !== 1'bx ) && ( shift_rg_prev[1] !== shift_rg_expected_prev[1] )
+		&& ((shift_rg_expected_prev[1] !== last_shift_rg_exp[1]) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port shift_rg[1] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", shift_rg_expected_prev);
+		$display ("     Real value = %b", shift_rg_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_shift_rg_exp[1] = shift_rg_expected_prev[1];
+	end
+	if (
+		( shift_rg_expected_prev[2] !== 1'bx ) && ( shift_rg_prev[2] !== shift_rg_expected_prev[2] )
+		&& ((shift_rg_expected_prev[2] !== last_shift_rg_exp[2]) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port shift_rg[2] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", shift_rg_expected_prev);
+		$display ("     Real value = %b", shift_rg_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_shift_rg_exp[2] = shift_rg_expected_prev[2];
+	end
+	if (
+		( shift_rg_expected_prev[3] !== 1'bx ) && ( shift_rg_prev[3] !== shift_rg_expected_prev[3] )
+		&& ((shift_rg_expected_prev[3] !== last_shift_rg_exp[3]) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port shift_rg[3] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", shift_rg_expected_prev);
+		$display ("     Real value = %b", shift_rg_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_shift_rg_exp[3] = shift_rg_expected_prev[3];
+	end
+
+	trigger <= ~trigger;
+end
+initial 
+
+begin 
+$timeformat(-12,3," ps",6);
+#50000000;
+if (nummismatches > 0)
+	$display ("%d mismatched vectors : Simulation failed !",nummismatches);
+else
+	$display ("Simulation passed !");
+$finish;
+end 
+endmodule
+
+module shift_reg_4_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg ISb;
+reg clk;
+reg dir;
+reg en;
+reg rst;
+// wires                                               
+wire OSb;
+wire [3:0] shift_rg;
+
+wire sampler;                             
+
+// assign statements (if any)                          
+shift_reg_4 i1 (
+// port map - connection between master ports and signals/registers   
+	.ISb(ISb),
+	.OSb(OSb),
+	.clk(clk),
+	.dir(dir),
+	.en(en),
+	.rst(rst),
+	.shift_rg(shift_rg)
+);
+
+// clk
+always
+begin
+	clk = 1'b0;
+	clk = #1000000 1'b1;
+	#1000000;
+end 
+
+// en
+initial
+begin
+	repeat(12)
+	begin
+		en = 1'b0;
+		en = #2000000 1'b1;
+		# 2000000;
+	end
+	en = 1'b0;
+end 
+
+// ISb
+initial
+begin
+	repeat(6)
+	begin
+		ISb = 1'b0;
+		ISb = #4000000 1'b1;
+		# 4000000;
+	end
+	ISb = 1'b0;
+end 
+
+// dir
+initial
+begin
+	repeat(3)
+	begin
+		dir = 1'b0;
+		dir = #8000000 1'b1;
+		# 8000000;
+	end
+	dir = 1'b0;
+end 
+
+// rst
+initial
+begin
+	rst = 1'b0;
+	rst = #35000000 1'b1;
+	rst = #1000000 1'b0;
+end 
+
+shift_reg_4_vlg_sample_tst tb_sample (
+	.ISb(ISb),
+	.clk(clk),
+	.dir(dir),
+	.en(en),
+	.rst(rst),
+	.sampler_tx(sampler)
+);
+
+shift_reg_4_vlg_check_tst tb_out(
+	.OSb(OSb),
+	.shift_rg(shift_rg),
+	.sampler_rx(sampler)
+);
+endmodule
+

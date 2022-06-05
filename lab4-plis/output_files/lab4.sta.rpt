@@ -1,0 +1,1492 @@
+TimeQuest Timing Analyzer report for lab4
+Sat Jun 04 21:31:05 2022
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'synchronizer:comb_33|q1'
+ 12. Slow Model Setup: 'CLOCK_50'
+ 13. Slow Model Hold: 'CLOCK_50'
+ 14. Slow Model Hold: 'synchronizer:comb_33|q1'
+ 15. Slow Model Recovery: 'synchronizer:comb_33|q1'
+ 16. Slow Model Removal: 'synchronizer:comb_33|q1'
+ 17. Slow Model Minimum Pulse Width: 'CLOCK_50'
+ 18. Slow Model Minimum Pulse Width: 'synchronizer:comb_33|q1'
+ 19. Setup Times
+ 20. Hold Times
+ 21. Clock to Output Times
+ 22. Minimum Clock to Output Times
+ 23. Fast Model Setup Summary
+ 24. Fast Model Hold Summary
+ 25. Fast Model Recovery Summary
+ 26. Fast Model Removal Summary
+ 27. Fast Model Minimum Pulse Width Summary
+ 28. Fast Model Setup: 'synchronizer:comb_33|q1'
+ 29. Fast Model Setup: 'CLOCK_50'
+ 30. Fast Model Hold: 'CLOCK_50'
+ 31. Fast Model Hold: 'synchronizer:comb_33|q1'
+ 32. Fast Model Recovery: 'synchronizer:comb_33|q1'
+ 33. Fast Model Removal: 'synchronizer:comb_33|q1'
+ 34. Fast Model Minimum Pulse Width: 'CLOCK_50'
+ 35. Fast Model Minimum Pulse Width: 'synchronizer:comb_33|q1'
+ 36. Setup Times
+ 37. Hold Times
+ 38. Clock to Output Times
+ 39. Minimum Clock to Output Times
+ 40. Multicorner Timing Analysis Summary
+ 41. Setup Times
+ 42. Hold Times
+ 43. Clock to Output Times
+ 44. Minimum Clock to Output Times
+ 45. Setup Transfers
+ 46. Hold Transfers
+ 47. Recovery Transfers
+ 48. Removal Transfers
+ 49. Report TCCS
+ 50. Report RSKM
+ 51. Unconstrained Paths
+ 52. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; lab4                                                              ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C20F484C7                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 12     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                           ;
++-------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------------------+
+; Clock Name              ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                     ;
++-------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------------------+
+; CLOCK_50                ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLOCK_50 }                ;
+; synchronizer:comb_33|q1 ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { synchronizer:comb_33|q1 } ;
++-------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Fmax Summary                                                                                                ;
++------------+-----------------+-------------------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name              ; Note                                                          ;
++------------+-----------------+-------------------------+---------------------------------------------------------------+
+; 218.63 MHz ; 218.63 MHz      ; synchronizer:comb_33|q1 ;                                                               ;
+; 805.15 MHz ; 380.08 MHz      ; CLOCK_50                ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+-------------------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------------------------+
+; Slow Model Setup Summary                         ;
++-------------------------+--------+---------------+
+; Clock                   ; Slack  ; End Point TNS ;
++-------------------------+--------+---------------+
+; synchronizer:comb_33|q1 ; -3.574 ; -26.786       ;
+; CLOCK_50                ; -0.242 ; -0.331        ;
++-------------------------+--------+---------------+
+
+
++--------------------------------------------------+
+; Slow Model Hold Summary                          ;
++-------------------------+--------+---------------+
+; Clock                   ; Slack  ; End Point TNS ;
++-------------------------+--------+---------------+
+; CLOCK_50                ; -1.320 ; -1.320        ;
+; synchronizer:comb_33|q1 ; 0.445  ; 0.000         ;
++-------------------------+--------+---------------+
+
+
++--------------------------------------------------+
+; Slow Model Recovery Summary                      ;
++-------------------------+--------+---------------+
+; Clock                   ; Slack  ; End Point TNS ;
++-------------------------+--------+---------------+
+; synchronizer:comb_33|q1 ; -1.163 ; -18.532       ;
++-------------------------+--------+---------------+
+
+
++-------------------------------------------------+
+; Slow Model Removal Summary                      ;
++-------------------------+-------+---------------+
+; Clock                   ; Slack ; End Point TNS ;
++-------------------------+-------+---------------+
+; synchronizer:comb_33|q1 ; 1.557 ; 0.000         ;
++-------------------------+-------+---------------+
+
+
++--------------------------------------------------+
+; Slow Model Minimum Pulse Width Summary           ;
++-------------------------+--------+---------------+
+; Clock                   ; Slack  ; End Point TNS ;
++-------------------------+--------+---------------+
+; CLOCK_50                ; -1.631 ; -8.963        ;
+; synchronizer:comb_33|q1 ; -0.611 ; -20.774       ;
++-------------------------+--------+---------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'synchronizer:comb_33|q1'                                                                                       ;
++--------+--------------+--------------+-------------------------+-------------------------+--------------+------------+------------+
+; Slack  ; From Node    ; To Node      ; Launch Clock            ; Latch Clock             ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------+--------------+-------------------------+-------------------------+--------------+------------+------------+
+; -3.574 ; shift_reg[5] ; counter[1]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 4.612      ;
+; -3.574 ; shift_reg[5] ; counter[2]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 4.612      ;
+; -3.574 ; shift_reg[5] ; counter[3]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 4.612      ;
+; -3.574 ; shift_reg[5] ; counter[4]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 4.612      ;
+; -3.574 ; shift_reg[5] ; counter[5]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 4.612      ;
+; -3.574 ; shift_reg[5] ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 4.612      ;
+; -3.559 ; shift_reg[2] ; counter[1]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 4.597      ;
+; -3.559 ; shift_reg[2] ; counter[2]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 4.597      ;
+; -3.559 ; shift_reg[2] ; counter[3]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 4.597      ;
+; -3.559 ; shift_reg[2] ; counter[4]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 4.597      ;
+; -3.559 ; shift_reg[2] ; counter[5]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 4.597      ;
+; -3.559 ; shift_reg[2] ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 4.597      ;
+; -3.391 ; shift_reg[4] ; counter[1]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 4.429      ;
+; -3.391 ; shift_reg[4] ; counter[2]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 4.429      ;
+; -3.391 ; shift_reg[4] ; counter[3]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 4.429      ;
+; -3.391 ; shift_reg[4] ; counter[4]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 4.429      ;
+; -3.391 ; shift_reg[4] ; counter[5]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 4.429      ;
+; -3.391 ; shift_reg[4] ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 4.429      ;
+; -3.383 ; shift_reg[1] ; counter[1]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 4.421      ;
+; -3.383 ; shift_reg[1] ; counter[2]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 4.421      ;
+; -3.383 ; shift_reg[1] ; counter[3]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 4.421      ;
+; -3.383 ; shift_reg[1] ; counter[4]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 4.421      ;
+; -3.383 ; shift_reg[1] ; counter[5]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 4.421      ;
+; -3.383 ; shift_reg[1] ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 4.421      ;
+; -3.339 ; shift_reg[0] ; counter[1]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 4.377      ;
+; -3.339 ; shift_reg[0] ; counter[2]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 4.377      ;
+; -3.339 ; shift_reg[0] ; counter[3]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 4.377      ;
+; -3.339 ; shift_reg[0] ; counter[4]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 4.377      ;
+; -3.339 ; shift_reg[0] ; counter[5]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 4.377      ;
+; -3.339 ; shift_reg[0] ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 4.377      ;
+; -3.207 ; shift_reg[3] ; counter[1]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 4.245      ;
+; -3.207 ; shift_reg[3] ; counter[2]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 4.245      ;
+; -3.207 ; shift_reg[3] ; counter[3]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 4.245      ;
+; -3.207 ; shift_reg[3] ; counter[4]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 4.245      ;
+; -3.207 ; shift_reg[3] ; counter[5]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 4.245      ;
+; -3.207 ; shift_reg[3] ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 4.245      ;
+; -3.060 ; shift_reg[5] ; counter[0]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 4.098      ;
+; -3.045 ; shift_reg[2] ; counter[0]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 4.083      ;
+; -2.877 ; shift_reg[4] ; counter[0]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 3.915      ;
+; -2.869 ; shift_reg[1] ; counter[0]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 3.907      ;
+; -2.825 ; shift_reg[0] ; counter[0]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 3.863      ;
+; -2.693 ; shift_reg[3] ; counter[0]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 3.731      ;
+; -1.236 ; counter[0]   ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 2.274      ;
+; -1.156 ; counter[0]   ; counter[5]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 2.194      ;
+; -1.137 ; counter[2]   ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 2.175      ;
+; -1.076 ; counter[0]   ; counter[4]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 2.114      ;
+; -1.057 ; counter[2]   ; counter[5]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 2.095      ;
+; -0.996 ; counter[0]   ; counter[3]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 2.034      ;
+; -0.992 ; counter[1]   ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 2.030      ;
+; -0.977 ; counter[2]   ; counter[4]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 2.015      ;
+; -0.958 ; counter[4]   ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.996      ;
+; -0.916 ; counter[0]   ; counter[2]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.954      ;
+; -0.912 ; counter[1]   ; counter[5]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.950      ;
+; -0.897 ; counter[2]   ; counter[3]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.935      ;
+; -0.878 ; counter[4]   ; counter[5]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.916      ;
+; -0.832 ; counter[3]   ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.870      ;
+; -0.832 ; counter[1]   ; counter[4]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.870      ;
+; -0.752 ; counter[3]   ; counter[5]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.790      ;
+; -0.752 ; counter[1]   ; counter[3]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.790      ;
+; -0.672 ; counter[3]   ; counter[4]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.710      ;
+; -0.672 ; counter[1]   ; counter[2]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.710      ;
+; -0.669 ; counter[5]   ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.707      ;
+; -0.546 ; shift_reg[5] ; shift_reg[6] ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.584      ;
+; -0.538 ; shift_reg[2] ; shift_reg[3] ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.576      ;
+; -0.485 ; counter[0]   ; counter[1]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.523      ;
+; -0.465 ; counter[2]   ; counter[2]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.503      ;
+; -0.446 ; counter[4]   ; counter[4]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.484      ;
+; -0.277 ; shift_reg[7] ; shift_reg[8] ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.315      ;
+; -0.272 ; shift_reg[6] ; shift_reg[7] ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.310      ;
+; -0.261 ; shift_reg[4] ; shift_reg[5] ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.299      ;
+; -0.259 ; shift_reg[3] ; shift_reg[4] ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.297      ;
+; -0.240 ; counter[3]   ; counter[3]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.278      ;
+; -0.240 ; counter[1]   ; counter[1]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.278      ;
+; -0.237 ; counter[5]   ; counter[5]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.275      ;
+; -0.129 ; shift_reg[1] ; shift_reg[2] ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.167      ;
+; 0.093  ; shift_reg[0] ; shift_reg[1] ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 0.945      ;
+; 0.107  ; counter[6]   ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 0.931      ;
+; 0.132  ; shift_reg[8] ; shift_reg[9] ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 0.906      ;
+; 0.307  ; counter[0]   ; counter[0]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 0.731      ;
++--------+--------------+--------------+-------------------------+-------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'CLOCK_50'                                                                                                                ;
++--------+-------------------------+-------------------------+-------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node               ; To Node                 ; Launch Clock            ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------+-------------------------+-------------------------+-------------+--------------+------------+------------+
+; -0.242 ; synchronizer:comb_31|q1 ; synchronizer:comb_31|q2 ; CLOCK_50                ; CLOCK_50    ; 1.000        ; 0.000      ; 1.280      ;
+; -0.089 ; synchronizer:comb_31|q0 ; synchronizer:comb_31|q1 ; CLOCK_50                ; CLOCK_50    ; 1.000        ; 0.000      ; 1.127      ;
+; 0.138  ; synchronizer:comb_33|q0 ; synchronizer:comb_33|q1 ; CLOCK_50                ; CLOCK_50    ; 1.000        ; 0.000      ; 0.900      ;
+; 1.572  ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q2 ; synchronizer:comb_33|q1 ; CLOCK_50    ; 0.500        ; 2.039      ; 1.282      ;
+; 2.072  ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q2 ; synchronizer:comb_33|q1 ; CLOCK_50    ; 1.000        ; 2.039      ; 1.282      ;
++--------+-------------------------+-------------------------+-------------------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'CLOCK_50'                                                                                                                 ;
++--------+-------------------------+-------------------------+-------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node               ; To Node                 ; Launch Clock            ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------+-------------------------+-------------------------+-------------+--------------+------------+------------+
+; -1.320 ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q2 ; synchronizer:comb_33|q1 ; CLOCK_50    ; 0.000        ; 2.039      ; 1.282      ;
+; -0.820 ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q2 ; synchronizer:comb_33|q1 ; CLOCK_50    ; -0.500       ; 2.039      ; 1.282      ;
+; 0.614  ; synchronizer:comb_33|q0 ; synchronizer:comb_33|q1 ; CLOCK_50                ; CLOCK_50    ; 0.000        ; 0.000      ; 0.900      ;
+; 0.841  ; synchronizer:comb_31|q0 ; synchronizer:comb_31|q1 ; CLOCK_50                ; CLOCK_50    ; 0.000        ; 0.000      ; 1.127      ;
+; 0.994  ; synchronizer:comb_31|q1 ; synchronizer:comb_31|q2 ; CLOCK_50                ; CLOCK_50    ; 0.000        ; 0.000      ; 1.280      ;
++--------+-------------------------+-------------------------+-------------------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'synchronizer:comb_33|q1'                                                                                       ;
++-------+--------------+--------------+-------------------------+-------------------------+--------------+------------+------------+
+; Slack ; From Node    ; To Node      ; Launch Clock            ; Latch Clock             ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------+--------------+-------------------------+-------------------------+--------------+------------+------------+
+; 0.445 ; counter[0]   ; counter[0]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 0.731      ;
+; 0.620 ; shift_reg[8] ; shift_reg[9] ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 0.906      ;
+; 0.645 ; counter[6]   ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 0.931      ;
+; 0.659 ; shift_reg[0] ; shift_reg[1] ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 0.945      ;
+; 0.881 ; shift_reg[1] ; shift_reg[2] ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.167      ;
+; 0.989 ; counter[5]   ; counter[5]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.275      ;
+; 0.992 ; counter[1]   ; counter[1]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.278      ;
+; 0.992 ; counter[3]   ; counter[3]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.278      ;
+; 1.011 ; shift_reg[3] ; shift_reg[4] ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.297      ;
+; 1.013 ; shift_reg[4] ; shift_reg[5] ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.299      ;
+; 1.024 ; shift_reg[6] ; shift_reg[7] ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.310      ;
+; 1.029 ; shift_reg[7] ; shift_reg[8] ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.315      ;
+; 1.198 ; counter[4]   ; counter[4]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.484      ;
+; 1.217 ; counter[2]   ; counter[2]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.503      ;
+; 1.237 ; counter[0]   ; counter[1]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.523      ;
+; 1.290 ; shift_reg[2] ; shift_reg[3] ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.576      ;
+; 1.298 ; shift_reg[5] ; shift_reg[6] ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.584      ;
+; 1.421 ; counter[5]   ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.707      ;
+; 1.424 ; counter[3]   ; counter[4]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.710      ;
+; 1.424 ; counter[1]   ; counter[2]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.710      ;
+; 1.504 ; counter[3]   ; counter[5]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.790      ;
+; 1.504 ; counter[1]   ; counter[3]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.790      ;
+; 1.584 ; counter[3]   ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.870      ;
+; 1.584 ; counter[1]   ; counter[4]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.870      ;
+; 1.630 ; counter[4]   ; counter[5]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.916      ;
+; 1.649 ; counter[2]   ; counter[3]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.935      ;
+; 1.664 ; counter[1]   ; counter[5]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.950      ;
+; 1.668 ; counter[0]   ; counter[2]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.954      ;
+; 1.710 ; counter[4]   ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.996      ;
+; 1.729 ; counter[2]   ; counter[4]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 2.015      ;
+; 1.744 ; counter[1]   ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 2.030      ;
+; 1.748 ; counter[0]   ; counter[3]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 2.034      ;
+; 1.809 ; counter[2]   ; counter[5]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 2.095      ;
+; 1.828 ; counter[0]   ; counter[4]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 2.114      ;
+; 1.889 ; counter[2]   ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 2.175      ;
+; 1.908 ; counter[0]   ; counter[5]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 2.194      ;
+; 1.988 ; counter[0]   ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 2.274      ;
+; 2.460 ; shift_reg[3] ; counter[0]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 2.746      ;
+; 2.470 ; shift_reg[4] ; counter[0]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 2.756      ;
+; 2.582 ; shift_reg[5] ; counter[0]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 2.868      ;
+; 2.659 ; shift_reg[1] ; counter[0]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 2.945      ;
+; 2.666 ; shift_reg[2] ; counter[0]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 2.952      ;
+; 2.807 ; shift_reg[0] ; counter[0]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 3.093      ;
+; 2.974 ; shift_reg[3] ; counter[1]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 3.260      ;
+; 2.974 ; shift_reg[3] ; counter[2]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 3.260      ;
+; 2.974 ; shift_reg[3] ; counter[3]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 3.260      ;
+; 2.974 ; shift_reg[3] ; counter[4]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 3.260      ;
+; 2.974 ; shift_reg[3] ; counter[5]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 3.260      ;
+; 2.974 ; shift_reg[3] ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 3.260      ;
+; 3.180 ; shift_reg[2] ; counter[1]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 3.466      ;
+; 3.180 ; shift_reg[2] ; counter[2]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 3.466      ;
+; 3.180 ; shift_reg[2] ; counter[3]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 3.466      ;
+; 3.180 ; shift_reg[2] ; counter[4]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 3.466      ;
+; 3.180 ; shift_reg[2] ; counter[5]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 3.466      ;
+; 3.180 ; shift_reg[2] ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 3.466      ;
+; 3.182 ; shift_reg[4] ; counter[1]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 3.468      ;
+; 3.182 ; shift_reg[4] ; counter[2]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 3.468      ;
+; 3.182 ; shift_reg[4] ; counter[3]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 3.468      ;
+; 3.182 ; shift_reg[4] ; counter[4]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 3.468      ;
+; 3.182 ; shift_reg[4] ; counter[5]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 3.468      ;
+; 3.182 ; shift_reg[4] ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 3.468      ;
+; 3.246 ; shift_reg[5] ; counter[1]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 3.532      ;
+; 3.246 ; shift_reg[5] ; counter[2]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 3.532      ;
+; 3.246 ; shift_reg[5] ; counter[3]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 3.532      ;
+; 3.246 ; shift_reg[5] ; counter[4]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 3.532      ;
+; 3.246 ; shift_reg[5] ; counter[5]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 3.532      ;
+; 3.246 ; shift_reg[5] ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 3.532      ;
+; 3.371 ; shift_reg[1] ; counter[1]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 3.657      ;
+; 3.371 ; shift_reg[1] ; counter[2]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 3.657      ;
+; 3.371 ; shift_reg[1] ; counter[3]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 3.657      ;
+; 3.371 ; shift_reg[1] ; counter[4]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 3.657      ;
+; 3.371 ; shift_reg[1] ; counter[5]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 3.657      ;
+; 3.371 ; shift_reg[1] ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 3.657      ;
+; 3.506 ; shift_reg[0] ; counter[1]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 3.792      ;
+; 3.506 ; shift_reg[0] ; counter[2]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 3.792      ;
+; 3.506 ; shift_reg[0] ; counter[3]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 3.792      ;
+; 3.506 ; shift_reg[0] ; counter[4]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 3.792      ;
+; 3.506 ; shift_reg[0] ; counter[5]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 3.792      ;
+; 3.506 ; shift_reg[0] ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 3.792      ;
++-------+--------------+--------------+-------------------------+-------------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Recovery: 'synchronizer:comb_33|q1'                                                                                    ;
++--------+-------------------------+--------------+--------------+-------------------------+--------------+------------+------------+
+; Slack  ; From Node               ; To Node      ; Launch Clock ; Latch Clock             ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------+--------------+--------------+-------------------------+--------------+------------+------------+
+; -1.163 ; synchronizer:comb_31|q1 ; shift_reg[2] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.088     ; 2.113      ;
+; -1.163 ; synchronizer:comb_31|q1 ; shift_reg[3] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.088     ; 2.113      ;
+; -1.163 ; synchronizer:comb_31|q1 ; shift_reg[4] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.088     ; 2.113      ;
+; -1.163 ; synchronizer:comb_31|q1 ; shift_reg[5] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.088     ; 2.113      ;
+; -1.163 ; synchronizer:comb_31|q1 ; counter[1]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.088     ; 2.113      ;
+; -1.163 ; synchronizer:comb_31|q1 ; counter[2]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.088     ; 2.113      ;
+; -1.163 ; synchronizer:comb_31|q1 ; counter[3]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.088     ; 2.113      ;
+; -1.163 ; synchronizer:comb_31|q1 ; counter[4]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.088     ; 2.113      ;
+; -1.163 ; synchronizer:comb_31|q1 ; counter[5]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.088     ; 2.113      ;
+; -1.163 ; synchronizer:comb_31|q1 ; counter[6]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.088     ; 2.113      ;
+; -0.986 ; synchronizer:comb_31|q1 ; shift_reg[0] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.088     ; 1.936      ;
+; -0.986 ; synchronizer:comb_31|q1 ; shift_reg[1] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.088     ; 1.936      ;
+; -0.986 ; synchronizer:comb_31|q1 ; counter[0]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.088     ; 1.936      ;
+; -0.986 ; synchronizer:comb_31|q1 ; shift_reg[6] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.088     ; 1.936      ;
+; -0.986 ; synchronizer:comb_31|q1 ; shift_reg[7] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.088     ; 1.936      ;
+; -0.986 ; synchronizer:comb_31|q1 ; shift_reg[8] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.088     ; 1.936      ;
+; -0.986 ; synchronizer:comb_31|q1 ; shift_reg[9] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.088     ; 1.936      ;
+; -0.982 ; synchronizer:comb_31|q2 ; shift_reg[2] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.088     ; 1.932      ;
+; -0.982 ; synchronizer:comb_31|q2 ; shift_reg[3] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.088     ; 1.932      ;
+; -0.982 ; synchronizer:comb_31|q2 ; shift_reg[4] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.088     ; 1.932      ;
+; -0.982 ; synchronizer:comb_31|q2 ; shift_reg[5] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.088     ; 1.932      ;
+; -0.982 ; synchronizer:comb_31|q2 ; counter[1]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.088     ; 1.932      ;
+; -0.982 ; synchronizer:comb_31|q2 ; counter[2]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.088     ; 1.932      ;
+; -0.982 ; synchronizer:comb_31|q2 ; counter[3]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.088     ; 1.932      ;
+; -0.982 ; synchronizer:comb_31|q2 ; counter[4]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.088     ; 1.932      ;
+; -0.982 ; synchronizer:comb_31|q2 ; counter[5]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.088     ; 1.932      ;
+; -0.982 ; synchronizer:comb_31|q2 ; counter[6]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.088     ; 1.932      ;
+; -0.805 ; synchronizer:comb_31|q2 ; shift_reg[0] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.088     ; 1.755      ;
+; -0.805 ; synchronizer:comb_31|q2 ; shift_reg[1] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.088     ; 1.755      ;
+; -0.805 ; synchronizer:comb_31|q2 ; counter[0]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.088     ; 1.755      ;
+; -0.805 ; synchronizer:comb_31|q2 ; shift_reg[6] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.088     ; 1.755      ;
+; -0.805 ; synchronizer:comb_31|q2 ; shift_reg[7] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.088     ; 1.755      ;
+; -0.805 ; synchronizer:comb_31|q2 ; shift_reg[8] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.088     ; 1.755      ;
+; -0.805 ; synchronizer:comb_31|q2 ; shift_reg[9] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.088     ; 1.755      ;
++--------+-------------------------+--------------+--------------+-------------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Removal: 'synchronizer:comb_33|q1'                                                                                    ;
++-------+-------------------------+--------------+--------------+-------------------------+--------------+------------+------------+
+; Slack ; From Node               ; To Node      ; Launch Clock ; Latch Clock             ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------+--------------+--------------+-------------------------+--------------+------------+------------+
+; 1.557 ; synchronizer:comb_31|q2 ; shift_reg[0] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.088     ; 1.755      ;
+; 1.557 ; synchronizer:comb_31|q2 ; shift_reg[1] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.088     ; 1.755      ;
+; 1.557 ; synchronizer:comb_31|q2 ; counter[0]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.088     ; 1.755      ;
+; 1.557 ; synchronizer:comb_31|q2 ; shift_reg[6] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.088     ; 1.755      ;
+; 1.557 ; synchronizer:comb_31|q2 ; shift_reg[7] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.088     ; 1.755      ;
+; 1.557 ; synchronizer:comb_31|q2 ; shift_reg[8] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.088     ; 1.755      ;
+; 1.557 ; synchronizer:comb_31|q2 ; shift_reg[9] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.088     ; 1.755      ;
+; 1.734 ; synchronizer:comb_31|q2 ; shift_reg[2] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.088     ; 1.932      ;
+; 1.734 ; synchronizer:comb_31|q2 ; shift_reg[3] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.088     ; 1.932      ;
+; 1.734 ; synchronizer:comb_31|q2 ; shift_reg[4] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.088     ; 1.932      ;
+; 1.734 ; synchronizer:comb_31|q2 ; shift_reg[5] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.088     ; 1.932      ;
+; 1.734 ; synchronizer:comb_31|q2 ; counter[1]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.088     ; 1.932      ;
+; 1.734 ; synchronizer:comb_31|q2 ; counter[2]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.088     ; 1.932      ;
+; 1.734 ; synchronizer:comb_31|q2 ; counter[3]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.088     ; 1.932      ;
+; 1.734 ; synchronizer:comb_31|q2 ; counter[4]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.088     ; 1.932      ;
+; 1.734 ; synchronizer:comb_31|q2 ; counter[5]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.088     ; 1.932      ;
+; 1.734 ; synchronizer:comb_31|q2 ; counter[6]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.088     ; 1.932      ;
+; 1.738 ; synchronizer:comb_31|q1 ; shift_reg[0] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.088     ; 1.936      ;
+; 1.738 ; synchronizer:comb_31|q1 ; shift_reg[1] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.088     ; 1.936      ;
+; 1.738 ; synchronizer:comb_31|q1 ; counter[0]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.088     ; 1.936      ;
+; 1.738 ; synchronizer:comb_31|q1 ; shift_reg[6] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.088     ; 1.936      ;
+; 1.738 ; synchronizer:comb_31|q1 ; shift_reg[7] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.088     ; 1.936      ;
+; 1.738 ; synchronizer:comb_31|q1 ; shift_reg[8] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.088     ; 1.936      ;
+; 1.738 ; synchronizer:comb_31|q1 ; shift_reg[9] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.088     ; 1.936      ;
+; 1.915 ; synchronizer:comb_31|q1 ; shift_reg[2] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.088     ; 2.113      ;
+; 1.915 ; synchronizer:comb_31|q1 ; shift_reg[3] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.088     ; 2.113      ;
+; 1.915 ; synchronizer:comb_31|q1 ; shift_reg[4] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.088     ; 2.113      ;
+; 1.915 ; synchronizer:comb_31|q1 ; shift_reg[5] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.088     ; 2.113      ;
+; 1.915 ; synchronizer:comb_31|q1 ; counter[1]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.088     ; 2.113      ;
+; 1.915 ; synchronizer:comb_31|q1 ; counter[2]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.088     ; 2.113      ;
+; 1.915 ; synchronizer:comb_31|q1 ; counter[3]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.088     ; 2.113      ;
+; 1.915 ; synchronizer:comb_31|q1 ; counter[4]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.088     ; 2.113      ;
+; 1.915 ; synchronizer:comb_31|q1 ; counter[5]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.088     ; 2.113      ;
+; 1.915 ; synchronizer:comb_31|q1 ; counter[6]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.088     ; 2.113      ;
++-------+-------------------------+--------------+--------------+-------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'CLOCK_50'                                                                    ;
++--------+--------------+----------------+------------------+----------+------------+---------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                    ;
++--------+--------------+----------------+------------------+----------+------------+---------------------------+
+; -1.631 ; 1.000        ; 2.631          ; Port Rate        ; CLOCK_50 ; Rise       ; CLOCK_50                  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; synchronizer:comb_31|q0   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; synchronizer:comb_31|q0   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; synchronizer:comb_31|q1   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; synchronizer:comb_31|q1   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; synchronizer:comb_31|q2   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; synchronizer:comb_31|q2   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; synchronizer:comb_33|q0   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; synchronizer:comb_33|q0   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; synchronizer:comb_33|q1   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; synchronizer:comb_33|q1   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; CLOCK_50 ; Rise       ; synchronizer:comb_33|q2   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; synchronizer:comb_33|q2   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; CLOCK_50|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; CLOCK_50|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; CLOCK_50~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; CLOCK_50~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; CLOCK_50~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; CLOCK_50~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; comb_31|q0|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; comb_31|q0|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; comb_31|q1|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; comb_31|q1|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; comb_31|q2|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; comb_31|q2|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; comb_33|q0|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; comb_33|q0|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; comb_33|q1|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; comb_33|q1|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; comb_33|q2|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; comb_33|q2|clk            ;
++--------+--------------+----------------+------------------+----------+------------+---------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'synchronizer:comb_33|q1'                                                                       ;
++--------+--------------+----------------+------------------+-------------------------+------------+------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock                   ; Clock Edge ; Target                       ;
++--------+--------------+----------------+------------------+-------------------------+------------+------------------------------+
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; counter[0]                   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; counter[0]                   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; counter[1]                   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; counter[1]                   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; counter[2]                   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; counter[2]                   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; counter[3]                   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; counter[3]                   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; counter[4]                   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; counter[4]                   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; counter[5]                   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; counter[5]                   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; counter[6]                   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; counter[6]                   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[0]                 ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[0]                 ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[1]                 ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[1]                 ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[2]                 ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[2]                 ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[3]                 ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[3]                 ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[4]                 ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[4]                 ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[5]                 ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[5]                 ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[6]                 ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[6]                 ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[7]                 ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[7]                 ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[8]                 ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[8]                 ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[9]                 ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[9]                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; comb_33|out|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; comb_33|out|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; comb_33|out|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; comb_33|out|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; comb_33|out~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; comb_33|out~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; comb_33|out~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; comb_33|out~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; comb_33|q1|regout            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; comb_33|q1|regout            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; counter[0]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; counter[0]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; counter[1]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; counter[1]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; counter[2]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; counter[2]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; counter[3]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; counter[3]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; counter[4]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; counter[4]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; counter[5]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; counter[5]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; counter[6]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; counter[6]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[0]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[0]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[1]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[1]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[2]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[2]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[3]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[3]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[4]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[4]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[5]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[5]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[6]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[6]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[7]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[7]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[8]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[8]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[9]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[9]|clk             ;
++--------+--------------+----------------+------------------+-------------------------+------------+------------------------------+
+
+
++--------------------------------------------------------------------------------------------+
+; Setup Times                                                                                ;
++-----------+-------------------------+-------+-------+------------+-------------------------+
+; Data Port ; Clock Port              ; Rise  ; Fall  ; Clock Edge ; Clock Reference         ;
++-----------+-------------------------+-------+-------+------------+-------------------------+
+; KEY[*]    ; CLOCK_50                ; 4.888 ; 4.888 ; Rise       ; CLOCK_50                ;
+;  KEY[0]   ; CLOCK_50                ; 4.888 ; 4.888 ; Rise       ; CLOCK_50                ;
+;  KEY[1]   ; CLOCK_50                ; 3.718 ; 3.718 ; Rise       ; CLOCK_50                ;
+; SW[*]     ; synchronizer:comb_33|q1 ; 3.760 ; 3.760 ; Rise       ; synchronizer:comb_33|q1 ;
+;  SW[0]    ; synchronizer:comb_33|q1 ; 3.760 ; 3.760 ; Rise       ; synchronizer:comb_33|q1 ;
++-----------+-------------------------+-------+-------+------------+-------------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Hold Times                                                                                   ;
++-----------+-------------------------+--------+--------+------------+-------------------------+
+; Data Port ; Clock Port              ; Rise   ; Fall   ; Clock Edge ; Clock Reference         ;
++-----------+-------------------------+--------+--------+------------+-------------------------+
+; KEY[*]    ; CLOCK_50                ; -3.470 ; -3.470 ; Rise       ; CLOCK_50                ;
+;  KEY[0]   ; CLOCK_50                ; -4.640 ; -4.640 ; Rise       ; CLOCK_50                ;
+;  KEY[1]   ; CLOCK_50                ; -3.470 ; -3.470 ; Rise       ; CLOCK_50                ;
+; SW[*]     ; synchronizer:comb_33|q1 ; 0.318  ; 0.318  ; Rise       ; synchronizer:comb_33|q1 ;
+;  SW[0]    ; synchronizer:comb_33|q1 ; 0.318  ; 0.318  ; Rise       ; synchronizer:comb_33|q1 ;
++-----------+-------------------------+--------+--------+------------+-------------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                        ;
++-----------+-------------------------+--------+--------+------------+-------------------------+
+; Data Port ; Clock Port              ; Rise   ; Fall   ; Clock Edge ; Clock Reference         ;
++-----------+-------------------------+--------+--------+------------+-------------------------+
+; HEX0[*]   ; synchronizer:comb_33|q1 ; 18.093 ; 18.093 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX0[0]  ; synchronizer:comb_33|q1 ; 17.921 ; 17.921 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX0[1]  ; synchronizer:comb_33|q1 ; 18.055 ; 18.055 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX0[2]  ; synchronizer:comb_33|q1 ; 17.710 ; 17.710 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX0[3]  ; synchronizer:comb_33|q1 ; 17.737 ; 17.737 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX0[4]  ; synchronizer:comb_33|q1 ; 18.086 ; 18.086 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX0[5]  ; synchronizer:comb_33|q1 ; 18.093 ; 18.093 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX0[6]  ; synchronizer:comb_33|q1 ; 17.976 ; 17.976 ; Rise       ; synchronizer:comb_33|q1 ;
+; HEX1[*]   ; synchronizer:comb_33|q1 ; 16.708 ; 16.708 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX1[0]  ; synchronizer:comb_33|q1 ; 13.290 ; 13.290 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX1[1]  ; synchronizer:comb_33|q1 ; 15.110 ; 15.110 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX1[2]  ; synchronizer:comb_33|q1 ; 16.116 ; 16.116 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX1[3]  ; synchronizer:comb_33|q1 ; 15.441 ; 15.441 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX1[4]  ; synchronizer:comb_33|q1 ; 16.344 ; 16.344 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX1[5]  ; synchronizer:comb_33|q1 ; 16.708 ; 16.708 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX1[6]  ; synchronizer:comb_33|q1 ; 13.274 ; 13.274 ; Rise       ; synchronizer:comb_33|q1 ;
+; LEDR[*]   ; synchronizer:comb_33|q1 ; 7.772  ; 7.772  ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[0]  ; synchronizer:comb_33|q1 ; 7.036  ; 7.036  ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[1]  ; synchronizer:comb_33|q1 ; 6.700  ; 6.700  ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[2]  ; synchronizer:comb_33|q1 ; 7.068  ; 7.068  ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[3]  ; synchronizer:comb_33|q1 ; 7.413  ; 7.413  ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[4]  ; synchronizer:comb_33|q1 ; 7.615  ; 7.615  ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[5]  ; synchronizer:comb_33|q1 ; 7.410  ; 7.410  ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[6]  ; synchronizer:comb_33|q1 ; 7.658  ; 7.658  ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[7]  ; synchronizer:comb_33|q1 ; 7.772  ; 7.772  ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[8]  ; synchronizer:comb_33|q1 ; 6.677  ; 6.677  ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[9]  ; synchronizer:comb_33|q1 ; 7.054  ; 7.054  ; Rise       ; synchronizer:comb_33|q1 ;
++-----------+-------------------------+--------+--------+------------+-------------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                ;
++-----------+-------------------------+--------+--------+------------+-------------------------+
+; Data Port ; Clock Port              ; Rise   ; Fall   ; Clock Edge ; Clock Reference         ;
++-----------+-------------------------+--------+--------+------------+-------------------------+
+; HEX0[*]   ; synchronizer:comb_33|q1 ; 11.474 ; 11.474 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX0[0]  ; synchronizer:comb_33|q1 ; 11.666 ; 11.666 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX0[1]  ; synchronizer:comb_33|q1 ; 11.784 ; 11.784 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX0[2]  ; synchronizer:comb_33|q1 ; 11.474 ; 11.474 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX0[3]  ; synchronizer:comb_33|q1 ; 11.474 ; 11.474 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX0[4]  ; synchronizer:comb_33|q1 ; 11.823 ; 11.823 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX0[5]  ; synchronizer:comb_33|q1 ; 11.817 ; 11.817 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX0[6]  ; synchronizer:comb_33|q1 ; 11.701 ; 11.701 ; Rise       ; synchronizer:comb_33|q1 ;
+; HEX1[*]   ; synchronizer:comb_33|q1 ; 11.765 ; 11.765 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX1[0]  ; synchronizer:comb_33|q1 ; 12.354 ; 12.354 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX1[1]  ; synchronizer:comb_33|q1 ; 11.765 ; 11.765 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX1[2]  ; synchronizer:comb_33|q1 ; 12.771 ; 12.771 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX1[3]  ; synchronizer:comb_33|q1 ; 12.132 ; 12.132 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX1[4]  ; synchronizer:comb_33|q1 ; 13.035 ; 13.035 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX1[5]  ; synchronizer:comb_33|q1 ; 13.366 ; 13.366 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX1[6]  ; synchronizer:comb_33|q1 ; 12.076 ; 12.076 ; Rise       ; synchronizer:comb_33|q1 ;
+; LEDR[*]   ; synchronizer:comb_33|q1 ; 6.677  ; 6.677  ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[0]  ; synchronizer:comb_33|q1 ; 7.036  ; 7.036  ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[1]  ; synchronizer:comb_33|q1 ; 6.700  ; 6.700  ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[2]  ; synchronizer:comb_33|q1 ; 7.068  ; 7.068  ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[3]  ; synchronizer:comb_33|q1 ; 7.413  ; 7.413  ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[4]  ; synchronizer:comb_33|q1 ; 7.615  ; 7.615  ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[5]  ; synchronizer:comb_33|q1 ; 7.410  ; 7.410  ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[6]  ; synchronizer:comb_33|q1 ; 7.658  ; 7.658  ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[7]  ; synchronizer:comb_33|q1 ; 7.772  ; 7.772  ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[8]  ; synchronizer:comb_33|q1 ; 6.677  ; 6.677  ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[9]  ; synchronizer:comb_33|q1 ; 7.054  ; 7.054  ; Rise       ; synchronizer:comb_33|q1 ;
++-----------+-------------------------+--------+--------+------------+-------------------------+
+
+
++--------------------------------------------------+
+; Fast Model Setup Summary                         ;
++-------------------------+--------+---------------+
+; Clock                   ; Slack  ; End Point TNS ;
++-------------------------+--------+---------------+
+; synchronizer:comb_33|q1 ; -0.771 ; -5.081        ;
+; CLOCK_50                ; 0.474  ; 0.000         ;
++-------------------------+--------+---------------+
+
+
++--------------------------------------------------+
+; Fast Model Hold Summary                          ;
++-------------------------+--------+---------------+
+; Clock                   ; Slack  ; End Point TNS ;
++-------------------------+--------+---------------+
+; CLOCK_50                ; -0.775 ; -0.775        ;
+; synchronizer:comb_33|q1 ; 0.215  ; 0.000         ;
++-------------------------+--------+---------------+
+
+
++--------------------------------------------------+
+; Fast Model Recovery Summary                      ;
++-------------------------+--------+---------------+
+; Clock                   ; Slack  ; End Point TNS ;
++-------------------------+--------+---------------+
+; synchronizer:comb_33|q1 ; -0.089 ; -1.002        ;
++-------------------------+--------+---------------+
+
+
++-------------------------------------------------+
+; Fast Model Removal Summary                      ;
++-------------------------+-------+---------------+
+; Clock                   ; Slack ; End Point TNS ;
++-------------------------+-------+---------------+
+; synchronizer:comb_33|q1 ; 0.869 ; 0.000         ;
++-------------------------+-------+---------------+
+
+
++--------------------------------------------------+
+; Fast Model Minimum Pulse Width Summary           ;
++-------------------------+--------+---------------+
+; Clock                   ; Slack  ; End Point TNS ;
++-------------------------+--------+---------------+
+; CLOCK_50                ; -1.380 ; -7.380        ;
+; synchronizer:comb_33|q1 ; -0.500 ; -17.000       ;
++-------------------------+--------+---------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'synchronizer:comb_33|q1'                                                                                       ;
++--------+--------------+--------------+-------------------------+-------------------------+--------------+------------+------------+
+; Slack  ; From Node    ; To Node      ; Launch Clock            ; Latch Clock             ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------+--------------+-------------------------+-------------------------+--------------+------------+------------+
+; -0.771 ; shift_reg[2] ; counter[1]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.803      ;
+; -0.771 ; shift_reg[2] ; counter[2]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.803      ;
+; -0.771 ; shift_reg[2] ; counter[3]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.803      ;
+; -0.771 ; shift_reg[2] ; counter[4]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.803      ;
+; -0.771 ; shift_reg[2] ; counter[5]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.803      ;
+; -0.771 ; shift_reg[2] ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.803      ;
+; -0.768 ; shift_reg[5] ; counter[1]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.800      ;
+; -0.768 ; shift_reg[5] ; counter[2]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.800      ;
+; -0.768 ; shift_reg[5] ; counter[3]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.800      ;
+; -0.768 ; shift_reg[5] ; counter[4]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.800      ;
+; -0.768 ; shift_reg[5] ; counter[5]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.800      ;
+; -0.768 ; shift_reg[5] ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.800      ;
+; -0.713 ; shift_reg[4] ; counter[1]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.745      ;
+; -0.713 ; shift_reg[4] ; counter[2]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.745      ;
+; -0.713 ; shift_reg[4] ; counter[3]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.745      ;
+; -0.713 ; shift_reg[4] ; counter[4]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.745      ;
+; -0.713 ; shift_reg[4] ; counter[5]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.745      ;
+; -0.713 ; shift_reg[4] ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.745      ;
+; -0.708 ; shift_reg[1] ; counter[1]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.740      ;
+; -0.708 ; shift_reg[1] ; counter[2]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.740      ;
+; -0.708 ; shift_reg[1] ; counter[3]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.740      ;
+; -0.708 ; shift_reg[1] ; counter[4]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.740      ;
+; -0.708 ; shift_reg[1] ; counter[5]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.740      ;
+; -0.708 ; shift_reg[1] ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.740      ;
+; -0.695 ; shift_reg[0] ; counter[1]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.727      ;
+; -0.695 ; shift_reg[0] ; counter[2]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.727      ;
+; -0.695 ; shift_reg[0] ; counter[3]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.727      ;
+; -0.695 ; shift_reg[0] ; counter[4]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.727      ;
+; -0.695 ; shift_reg[0] ; counter[5]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.727      ;
+; -0.695 ; shift_reg[0] ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.727      ;
+; -0.651 ; shift_reg[3] ; counter[1]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.683      ;
+; -0.651 ; shift_reg[3] ; counter[2]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.683      ;
+; -0.651 ; shift_reg[3] ; counter[3]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.683      ;
+; -0.651 ; shift_reg[3] ; counter[4]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.683      ;
+; -0.651 ; shift_reg[3] ; counter[5]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.683      ;
+; -0.651 ; shift_reg[3] ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.683      ;
+; -0.455 ; shift_reg[2] ; counter[0]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.487      ;
+; -0.452 ; shift_reg[5] ; counter[0]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.484      ;
+; -0.397 ; shift_reg[4] ; counter[0]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.429      ;
+; -0.392 ; shift_reg[1] ; counter[0]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.424      ;
+; -0.379 ; shift_reg[0] ; counter[0]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.411      ;
+; -0.335 ; shift_reg[3] ; counter[0]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 1.367      ;
+; 0.149  ; counter[0]   ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 0.883      ;
+; 0.184  ; counter[0]   ; counter[5]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 0.848      ;
+; 0.190  ; counter[2]   ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 0.842      ;
+; 0.219  ; counter[0]   ; counter[4]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 0.813      ;
+; 0.225  ; counter[2]   ; counter[5]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 0.807      ;
+; 0.234  ; counter[1]   ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 0.798      ;
+; 0.254  ; counter[0]   ; counter[3]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 0.778      ;
+; 0.260  ; counter[2]   ; counter[4]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 0.772      ;
+; 0.269  ; counter[4]   ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 0.763      ;
+; 0.269  ; counter[1]   ; counter[5]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 0.763      ;
+; 0.289  ; counter[0]   ; counter[2]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 0.743      ;
+; 0.295  ; counter[2]   ; counter[3]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 0.737      ;
+; 0.303  ; counter[3]   ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 0.729      ;
+; 0.304  ; counter[4]   ; counter[5]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 0.728      ;
+; 0.304  ; counter[1]   ; counter[4]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 0.728      ;
+; 0.338  ; counter[3]   ; counter[5]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 0.694      ;
+; 0.339  ; counter[1]   ; counter[3]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 0.693      ;
+; 0.354  ; shift_reg[5] ; shift_reg[6] ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 0.678      ;
+; 0.365  ; shift_reg[2] ; shift_reg[3] ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 0.667      ;
+; 0.373  ; counter[3]   ; counter[4]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 0.659      ;
+; 0.374  ; counter[1]   ; counter[2]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 0.658      ;
+; 0.375  ; counter[5]   ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 0.657      ;
+; 0.429  ; counter[0]   ; counter[1]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 0.603      ;
+; 0.433  ; counter[2]   ; counter[2]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 0.599      ;
+; 0.442  ; counter[4]   ; counter[4]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 0.590      ;
+; 0.450  ; shift_reg[7] ; shift_reg[8] ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 0.582      ;
+; 0.456  ; shift_reg[6] ; shift_reg[7] ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 0.576      ;
+; 0.463  ; shift_reg[4] ; shift_reg[5] ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 0.569      ;
+; 0.464  ; shift_reg[3] ; shift_reg[4] ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 0.568      ;
+; 0.509  ; counter[1]   ; counter[1]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 0.523      ;
+; 0.511  ; counter[3]   ; counter[3]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 0.521      ;
+; 0.513  ; counter[5]   ; counter[5]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 0.519      ;
+; 0.545  ; shift_reg[1] ; shift_reg[2] ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 0.487      ;
+; 0.620  ; shift_reg[0] ; shift_reg[1] ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 0.412      ;
+; 0.628  ; counter[6]   ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 0.404      ;
+; 0.641  ; shift_reg[8] ; shift_reg[9] ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 0.391      ;
+; 0.665  ; counter[0]   ; counter[0]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 1.000        ; 0.000      ; 0.367      ;
++--------+--------------+--------------+-------------------------+-------------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'CLOCK_50'                                                                                                               ;
++-------+-------------------------+-------------------------+-------------------------+-------------+--------------+------------+------------+
+; Slack ; From Node               ; To Node                 ; Launch Clock            ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------+-------------------------+-------------------------+-------------+--------------+------------+------------+
+; 0.474 ; synchronizer:comb_31|q1 ; synchronizer:comb_31|q2 ; CLOCK_50                ; CLOCK_50    ; 1.000        ; 0.000      ; 0.558      ;
+; 0.563 ; synchronizer:comb_31|q0 ; synchronizer:comb_31|q1 ; CLOCK_50                ; CLOCK_50    ; 1.000        ; 0.000      ; 0.469      ;
+; 0.642 ; synchronizer:comb_33|q0 ; synchronizer:comb_33|q1 ; CLOCK_50                ; CLOCK_50    ; 1.000        ; 0.000      ; 0.390      ;
+; 1.155 ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q2 ; synchronizer:comb_33|q1 ; CLOCK_50    ; 0.500        ; 1.041      ; 0.559      ;
+; 1.655 ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q2 ; synchronizer:comb_33|q1 ; CLOCK_50    ; 1.000        ; 1.041      ; 0.559      ;
++-------+-------------------------+-------------------------+-------------------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'CLOCK_50'                                                                                                                 ;
++--------+-------------------------+-------------------------+-------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node               ; To Node                 ; Launch Clock            ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------+-------------------------+-------------------------+-------------+--------------+------------+------------+
+; -0.775 ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q2 ; synchronizer:comb_33|q1 ; CLOCK_50    ; 0.000        ; 1.041      ; 0.559      ;
+; -0.275 ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q2 ; synchronizer:comb_33|q1 ; CLOCK_50    ; -0.500       ; 1.041      ; 0.559      ;
+; 0.238  ; synchronizer:comb_33|q0 ; synchronizer:comb_33|q1 ; CLOCK_50                ; CLOCK_50    ; 0.000        ; 0.000      ; 0.390      ;
+; 0.317  ; synchronizer:comb_31|q0 ; synchronizer:comb_31|q1 ; CLOCK_50                ; CLOCK_50    ; 0.000        ; 0.000      ; 0.469      ;
+; 0.406  ; synchronizer:comb_31|q1 ; synchronizer:comb_31|q2 ; CLOCK_50                ; CLOCK_50    ; 0.000        ; 0.000      ; 0.558      ;
++--------+-------------------------+-------------------------+-------------------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'synchronizer:comb_33|q1'                                                                                       ;
++-------+--------------+--------------+-------------------------+-------------------------+--------------+------------+------------+
+; Slack ; From Node    ; To Node      ; Launch Clock            ; Latch Clock             ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------+--------------+-------------------------+-------------------------+--------------+------------+------------+
+; 0.215 ; counter[0]   ; counter[0]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 0.367      ;
+; 0.239 ; shift_reg[8] ; shift_reg[9] ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 0.391      ;
+; 0.252 ; counter[6]   ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 0.404      ;
+; 0.260 ; shift_reg[0] ; shift_reg[1] ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 0.412      ;
+; 0.335 ; shift_reg[1] ; shift_reg[2] ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 0.487      ;
+; 0.367 ; counter[5]   ; counter[5]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 0.519      ;
+; 0.369 ; counter[3]   ; counter[3]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 0.521      ;
+; 0.371 ; counter[1]   ; counter[1]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 0.523      ;
+; 0.416 ; shift_reg[3] ; shift_reg[4] ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 0.568      ;
+; 0.417 ; shift_reg[4] ; shift_reg[5] ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 0.569      ;
+; 0.424 ; shift_reg[6] ; shift_reg[7] ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 0.576      ;
+; 0.430 ; shift_reg[7] ; shift_reg[8] ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 0.582      ;
+; 0.438 ; counter[4]   ; counter[4]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 0.590      ;
+; 0.447 ; counter[2]   ; counter[2]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 0.599      ;
+; 0.451 ; counter[0]   ; counter[1]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 0.603      ;
+; 0.505 ; counter[5]   ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 0.657      ;
+; 0.506 ; counter[1]   ; counter[2]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 0.658      ;
+; 0.507 ; counter[3]   ; counter[4]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 0.659      ;
+; 0.515 ; shift_reg[2] ; shift_reg[3] ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 0.667      ;
+; 0.526 ; shift_reg[5] ; shift_reg[6] ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 0.678      ;
+; 0.541 ; counter[1]   ; counter[3]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 0.693      ;
+; 0.542 ; counter[3]   ; counter[5]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 0.694      ;
+; 0.576 ; counter[1]   ; counter[4]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 0.728      ;
+; 0.576 ; counter[4]   ; counter[5]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 0.728      ;
+; 0.577 ; counter[3]   ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 0.729      ;
+; 0.585 ; counter[2]   ; counter[3]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 0.737      ;
+; 0.591 ; counter[0]   ; counter[2]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 0.743      ;
+; 0.611 ; counter[1]   ; counter[5]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 0.763      ;
+; 0.611 ; counter[4]   ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 0.763      ;
+; 0.620 ; counter[2]   ; counter[4]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 0.772      ;
+; 0.626 ; counter[0]   ; counter[3]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 0.778      ;
+; 0.646 ; counter[1]   ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 0.798      ;
+; 0.655 ; counter[2]   ; counter[5]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 0.807      ;
+; 0.661 ; counter[0]   ; counter[4]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 0.813      ;
+; 0.690 ; counter[2]   ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 0.842      ;
+; 0.696 ; counter[0]   ; counter[5]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 0.848      ;
+; 0.731 ; counter[0]   ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 0.883      ;
+; 0.918 ; shift_reg[3] ; counter[0]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.070      ;
+; 0.926 ; shift_reg[4] ; counter[0]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.078      ;
+; 0.948 ; shift_reg[1] ; counter[0]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.100      ;
+; 0.958 ; shift_reg[5] ; counter[0]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.110      ;
+; 0.959 ; shift_reg[2] ; counter[0]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.111      ;
+; 1.006 ; shift_reg[0] ; counter[0]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.158      ;
+; 1.234 ; shift_reg[3] ; counter[1]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.386      ;
+; 1.234 ; shift_reg[3] ; counter[2]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.386      ;
+; 1.234 ; shift_reg[3] ; counter[3]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.386      ;
+; 1.234 ; shift_reg[3] ; counter[4]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.386      ;
+; 1.234 ; shift_reg[3] ; counter[5]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.386      ;
+; 1.234 ; shift_reg[3] ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.386      ;
+; 1.275 ; shift_reg[2] ; counter[1]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.427      ;
+; 1.275 ; shift_reg[2] ; counter[2]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.427      ;
+; 1.275 ; shift_reg[2] ; counter[3]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.427      ;
+; 1.275 ; shift_reg[2] ; counter[4]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.427      ;
+; 1.275 ; shift_reg[2] ; counter[5]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.427      ;
+; 1.275 ; shift_reg[2] ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.427      ;
+; 1.284 ; shift_reg[4] ; counter[1]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.436      ;
+; 1.284 ; shift_reg[4] ; counter[2]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.436      ;
+; 1.284 ; shift_reg[4] ; counter[3]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.436      ;
+; 1.284 ; shift_reg[4] ; counter[4]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.436      ;
+; 1.284 ; shift_reg[4] ; counter[5]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.436      ;
+; 1.284 ; shift_reg[4] ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.436      ;
+; 1.301 ; shift_reg[5] ; counter[1]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.453      ;
+; 1.301 ; shift_reg[5] ; counter[2]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.453      ;
+; 1.301 ; shift_reg[5] ; counter[3]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.453      ;
+; 1.301 ; shift_reg[5] ; counter[4]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.453      ;
+; 1.301 ; shift_reg[5] ; counter[5]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.453      ;
+; 1.301 ; shift_reg[5] ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.453      ;
+; 1.306 ; shift_reg[1] ; counter[1]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.458      ;
+; 1.306 ; shift_reg[1] ; counter[2]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.458      ;
+; 1.306 ; shift_reg[1] ; counter[3]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.458      ;
+; 1.306 ; shift_reg[1] ; counter[4]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.458      ;
+; 1.306 ; shift_reg[1] ; counter[5]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.458      ;
+; 1.306 ; shift_reg[1] ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.458      ;
+; 1.351 ; shift_reg[0] ; counter[1]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.503      ;
+; 1.351 ; shift_reg[0] ; counter[2]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.503      ;
+; 1.351 ; shift_reg[0] ; counter[3]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.503      ;
+; 1.351 ; shift_reg[0] ; counter[4]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.503      ;
+; 1.351 ; shift_reg[0] ; counter[5]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.503      ;
+; 1.351 ; shift_reg[0] ; counter[6]   ; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 0.000        ; 0.000      ; 1.503      ;
++-------+--------------+--------------+-------------------------+-------------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Recovery: 'synchronizer:comb_33|q1'                                                                                    ;
++--------+-------------------------+--------------+--------------+-------------------------+--------------+------------+------------+
+; Slack  ; From Node               ; To Node      ; Launch Clock ; Latch Clock             ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------+--------------+--------------+-------------------------+--------------+------------+------------+
+; -0.089 ; synchronizer:comb_31|q1 ; shift_reg[2] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.147     ; 0.974      ;
+; -0.089 ; synchronizer:comb_31|q1 ; shift_reg[3] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.147     ; 0.974      ;
+; -0.089 ; synchronizer:comb_31|q1 ; shift_reg[4] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.147     ; 0.974      ;
+; -0.089 ; synchronizer:comb_31|q1 ; shift_reg[5] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.147     ; 0.974      ;
+; -0.089 ; synchronizer:comb_31|q1 ; counter[1]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.147     ; 0.974      ;
+; -0.089 ; synchronizer:comb_31|q1 ; counter[2]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.147     ; 0.974      ;
+; -0.089 ; synchronizer:comb_31|q1 ; counter[3]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.147     ; 0.974      ;
+; -0.089 ; synchronizer:comb_31|q1 ; counter[4]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.147     ; 0.974      ;
+; -0.089 ; synchronizer:comb_31|q1 ; counter[5]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.147     ; 0.974      ;
+; -0.089 ; synchronizer:comb_31|q1 ; counter[6]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.147     ; 0.974      ;
+; -0.062 ; synchronizer:comb_31|q2 ; shift_reg[2] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.147     ; 0.947      ;
+; -0.062 ; synchronizer:comb_31|q2 ; shift_reg[3] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.147     ; 0.947      ;
+; -0.062 ; synchronizer:comb_31|q2 ; shift_reg[4] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.147     ; 0.947      ;
+; -0.062 ; synchronizer:comb_31|q2 ; shift_reg[5] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.147     ; 0.947      ;
+; -0.062 ; synchronizer:comb_31|q2 ; counter[1]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.147     ; 0.947      ;
+; -0.062 ; synchronizer:comb_31|q2 ; counter[2]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.147     ; 0.947      ;
+; -0.062 ; synchronizer:comb_31|q2 ; counter[3]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.147     ; 0.947      ;
+; -0.062 ; synchronizer:comb_31|q2 ; counter[4]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.147     ; 0.947      ;
+; -0.062 ; synchronizer:comb_31|q2 ; counter[5]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.147     ; 0.947      ;
+; -0.062 ; synchronizer:comb_31|q2 ; counter[6]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.147     ; 0.947      ;
+; -0.016 ; synchronizer:comb_31|q1 ; shift_reg[0] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.147     ; 0.901      ;
+; -0.016 ; synchronizer:comb_31|q1 ; shift_reg[1] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.147     ; 0.901      ;
+; -0.016 ; synchronizer:comb_31|q1 ; counter[0]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.147     ; 0.901      ;
+; -0.016 ; synchronizer:comb_31|q1 ; shift_reg[6] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.147     ; 0.901      ;
+; -0.016 ; synchronizer:comb_31|q1 ; shift_reg[7] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.147     ; 0.901      ;
+; -0.016 ; synchronizer:comb_31|q1 ; shift_reg[8] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.147     ; 0.901      ;
+; -0.016 ; synchronizer:comb_31|q1 ; shift_reg[9] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.147     ; 0.901      ;
+; 0.011  ; synchronizer:comb_31|q2 ; shift_reg[0] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.147     ; 0.874      ;
+; 0.011  ; synchronizer:comb_31|q2 ; shift_reg[1] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.147     ; 0.874      ;
+; 0.011  ; synchronizer:comb_31|q2 ; counter[0]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.147     ; 0.874      ;
+; 0.011  ; synchronizer:comb_31|q2 ; shift_reg[6] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.147     ; 0.874      ;
+; 0.011  ; synchronizer:comb_31|q2 ; shift_reg[7] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.147     ; 0.874      ;
+; 0.011  ; synchronizer:comb_31|q2 ; shift_reg[8] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.147     ; 0.874      ;
+; 0.011  ; synchronizer:comb_31|q2 ; shift_reg[9] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 1.000        ; -0.147     ; 0.874      ;
++--------+-------------------------+--------------+--------------+-------------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Removal: 'synchronizer:comb_33|q1'                                                                                    ;
++-------+-------------------------+--------------+--------------+-------------------------+--------------+------------+------------+
+; Slack ; From Node               ; To Node      ; Launch Clock ; Latch Clock             ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------+--------------+--------------+-------------------------+--------------+------------+------------+
+; 0.869 ; synchronizer:comb_31|q2 ; shift_reg[0] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.147     ; 0.874      ;
+; 0.869 ; synchronizer:comb_31|q2 ; shift_reg[1] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.147     ; 0.874      ;
+; 0.869 ; synchronizer:comb_31|q2 ; counter[0]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.147     ; 0.874      ;
+; 0.869 ; synchronizer:comb_31|q2 ; shift_reg[6] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.147     ; 0.874      ;
+; 0.869 ; synchronizer:comb_31|q2 ; shift_reg[7] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.147     ; 0.874      ;
+; 0.869 ; synchronizer:comb_31|q2 ; shift_reg[8] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.147     ; 0.874      ;
+; 0.869 ; synchronizer:comb_31|q2 ; shift_reg[9] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.147     ; 0.874      ;
+; 0.896 ; synchronizer:comb_31|q1 ; shift_reg[0] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.147     ; 0.901      ;
+; 0.896 ; synchronizer:comb_31|q1 ; shift_reg[1] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.147     ; 0.901      ;
+; 0.896 ; synchronizer:comb_31|q1 ; counter[0]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.147     ; 0.901      ;
+; 0.896 ; synchronizer:comb_31|q1 ; shift_reg[6] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.147     ; 0.901      ;
+; 0.896 ; synchronizer:comb_31|q1 ; shift_reg[7] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.147     ; 0.901      ;
+; 0.896 ; synchronizer:comb_31|q1 ; shift_reg[8] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.147     ; 0.901      ;
+; 0.896 ; synchronizer:comb_31|q1 ; shift_reg[9] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.147     ; 0.901      ;
+; 0.942 ; synchronizer:comb_31|q2 ; shift_reg[2] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.147     ; 0.947      ;
+; 0.942 ; synchronizer:comb_31|q2 ; shift_reg[3] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.147     ; 0.947      ;
+; 0.942 ; synchronizer:comb_31|q2 ; shift_reg[4] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.147     ; 0.947      ;
+; 0.942 ; synchronizer:comb_31|q2 ; shift_reg[5] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.147     ; 0.947      ;
+; 0.942 ; synchronizer:comb_31|q2 ; counter[1]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.147     ; 0.947      ;
+; 0.942 ; synchronizer:comb_31|q2 ; counter[2]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.147     ; 0.947      ;
+; 0.942 ; synchronizer:comb_31|q2 ; counter[3]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.147     ; 0.947      ;
+; 0.942 ; synchronizer:comb_31|q2 ; counter[4]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.147     ; 0.947      ;
+; 0.942 ; synchronizer:comb_31|q2 ; counter[5]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.147     ; 0.947      ;
+; 0.942 ; synchronizer:comb_31|q2 ; counter[6]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.147     ; 0.947      ;
+; 0.969 ; synchronizer:comb_31|q1 ; shift_reg[2] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.147     ; 0.974      ;
+; 0.969 ; synchronizer:comb_31|q1 ; shift_reg[3] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.147     ; 0.974      ;
+; 0.969 ; synchronizer:comb_31|q1 ; shift_reg[4] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.147     ; 0.974      ;
+; 0.969 ; synchronizer:comb_31|q1 ; shift_reg[5] ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.147     ; 0.974      ;
+; 0.969 ; synchronizer:comb_31|q1 ; counter[1]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.147     ; 0.974      ;
+; 0.969 ; synchronizer:comb_31|q1 ; counter[2]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.147     ; 0.974      ;
+; 0.969 ; synchronizer:comb_31|q1 ; counter[3]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.147     ; 0.974      ;
+; 0.969 ; synchronizer:comb_31|q1 ; counter[4]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.147     ; 0.974      ;
+; 0.969 ; synchronizer:comb_31|q1 ; counter[5]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.147     ; 0.974      ;
+; 0.969 ; synchronizer:comb_31|q1 ; counter[6]   ; CLOCK_50     ; synchronizer:comb_33|q1 ; 0.000        ; -0.147     ; 0.974      ;
++-------+-------------------------+--------------+--------------+-------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'CLOCK_50'                                                                    ;
++--------+--------------+----------------+------------------+----------+------------+---------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                    ;
++--------+--------------+----------------+------------------+----------+------------+---------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; CLOCK_50 ; Rise       ; CLOCK_50                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; synchronizer:comb_31|q0   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; synchronizer:comb_31|q0   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; synchronizer:comb_31|q1   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; synchronizer:comb_31|q1   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; synchronizer:comb_31|q2   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; synchronizer:comb_31|q2   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; synchronizer:comb_33|q0   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; synchronizer:comb_33|q0   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; synchronizer:comb_33|q1   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; synchronizer:comb_33|q1   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; synchronizer:comb_33|q2   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; synchronizer:comb_33|q2   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; CLOCK_50|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; CLOCK_50|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; CLOCK_50~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; CLOCK_50~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; CLOCK_50~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; CLOCK_50~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; comb_31|q0|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; comb_31|q0|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; comb_31|q1|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; comb_31|q1|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; comb_31|q2|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; comb_31|q2|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; comb_33|q0|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; comb_33|q0|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; comb_33|q1|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; comb_33|q1|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK_50 ; Rise       ; comb_33|q2|clk            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK_50 ; Rise       ; comb_33|q2|clk            ;
++--------+--------------+----------------+------------------+----------+------------+---------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'synchronizer:comb_33|q1'                                                                       ;
++--------+--------------+----------------+------------------+-------------------------+------------+------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock                   ; Clock Edge ; Target                       ;
++--------+--------------+----------------+------------------+-------------------------+------------+------------------------------+
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; counter[0]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; counter[0]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; counter[1]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; counter[1]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; counter[2]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; counter[2]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; counter[3]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; counter[3]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; counter[4]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; counter[4]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; counter[5]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; counter[5]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; counter[6]                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; counter[6]                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[0]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[0]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[1]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[1]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[2]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[2]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[3]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[3]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[4]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[4]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[5]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[5]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[6]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[6]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[7]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[7]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[8]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[8]                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[9]                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[9]                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; comb_33|out|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; comb_33|out|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; comb_33|out|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; comb_33|out|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; comb_33|out~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; comb_33|out~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; comb_33|out~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; comb_33|out~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; comb_33|q1|regout            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; comb_33|q1|regout            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; counter[0]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; counter[0]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; counter[1]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; counter[1]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; counter[2]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; counter[2]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; counter[3]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; counter[3]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; counter[4]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; counter[4]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; counter[5]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; counter[5]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; counter[6]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; counter[6]|clk               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[0]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[0]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[1]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[1]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[2]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[2]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[3]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[3]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[4]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[4]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[5]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[5]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[6]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[6]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[7]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[7]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[8]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[8]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[9]|clk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; synchronizer:comb_33|q1 ; Rise       ; shift_reg[9]|clk             ;
++--------+--------------+----------------+------------------+-------------------------+------------+------------------------------+
+
+
++--------------------------------------------------------------------------------------------+
+; Setup Times                                                                                ;
++-----------+-------------------------+-------+-------+------------+-------------------------+
+; Data Port ; Clock Port              ; Rise  ; Fall  ; Clock Edge ; Clock Reference         ;
++-----------+-------------------------+-------+-------+------------+-------------------------+
+; KEY[*]    ; CLOCK_50                ; 2.265 ; 2.265 ; Rise       ; CLOCK_50                ;
+;  KEY[0]   ; CLOCK_50                ; 2.265 ; 2.265 ; Rise       ; CLOCK_50                ;
+;  KEY[1]   ; CLOCK_50                ; 1.713 ; 1.713 ; Rise       ; CLOCK_50                ;
+; SW[*]     ; synchronizer:comb_33|q1 ; 1.006 ; 1.006 ; Rise       ; synchronizer:comb_33|q1 ;
+;  SW[0]    ; synchronizer:comb_33|q1 ; 1.006 ; 1.006 ; Rise       ; synchronizer:comb_33|q1 ;
++-----------+-------------------------+-------+-------+------------+-------------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Hold Times                                                                                   ;
++-----------+-------------------------+--------+--------+------------+-------------------------+
+; Data Port ; Clock Port              ; Rise   ; Fall   ; Clock Edge ; Clock Reference         ;
++-----------+-------------------------+--------+--------+------------+-------------------------+
+; KEY[*]    ; CLOCK_50                ; -1.593 ; -1.593 ; Rise       ; CLOCK_50                ;
+;  KEY[0]   ; CLOCK_50                ; -2.145 ; -2.145 ; Rise       ; CLOCK_50                ;
+;  KEY[1]   ; CLOCK_50                ; -1.593 ; -1.593 ; Rise       ; CLOCK_50                ;
+; SW[*]     ; synchronizer:comb_33|q1 ; 0.574  ; 0.574  ; Rise       ; synchronizer:comb_33|q1 ;
+;  SW[0]    ; synchronizer:comb_33|q1 ; 0.574  ; 0.574  ; Rise       ; synchronizer:comb_33|q1 ;
++-----------+-------------------------+--------+--------+------------+-------------------------+
+
+
++--------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                      ;
++-----------+-------------------------+-------+-------+------------+-------------------------+
+; Data Port ; Clock Port              ; Rise  ; Fall  ; Clock Edge ; Clock Reference         ;
++-----------+-------------------------+-------+-------+------------+-------------------------+
+; HEX0[*]   ; synchronizer:comb_33|q1 ; 7.952 ; 7.952 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX0[0]  ; synchronizer:comb_33|q1 ; 7.850 ; 7.850 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX0[1]  ; synchronizer:comb_33|q1 ; 7.928 ; 7.928 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX0[2]  ; synchronizer:comb_33|q1 ; 7.810 ; 7.810 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX0[3]  ; synchronizer:comb_33|q1 ; 7.809 ; 7.809 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX0[4]  ; synchronizer:comb_33|q1 ; 7.941 ; 7.941 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX0[5]  ; synchronizer:comb_33|q1 ; 7.952 ; 7.952 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX0[6]  ; synchronizer:comb_33|q1 ; 7.896 ; 7.896 ; Rise       ; synchronizer:comb_33|q1 ;
+; HEX1[*]   ; synchronizer:comb_33|q1 ; 7.502 ; 7.502 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX1[0]  ; synchronizer:comb_33|q1 ; 6.245 ; 6.245 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX1[1]  ; synchronizer:comb_33|q1 ; 6.697 ; 6.697 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX1[2]  ; synchronizer:comb_33|q1 ; 7.208 ; 7.208 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX1[3]  ; synchronizer:comb_33|q1 ; 6.854 ; 6.854 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX1[4]  ; synchronizer:comb_33|q1 ; 7.157 ; 7.157 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX1[5]  ; synchronizer:comb_33|q1 ; 7.502 ; 7.502 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX1[6]  ; synchronizer:comb_33|q1 ; 6.241 ; 6.241 ; Rise       ; synchronizer:comb_33|q1 ;
+; LEDR[*]   ; synchronizer:comb_33|q1 ; 3.986 ; 3.986 ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[0]  ; synchronizer:comb_33|q1 ; 3.651 ; 3.651 ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[1]  ; synchronizer:comb_33|q1 ; 3.520 ; 3.520 ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[2]  ; synchronizer:comb_33|q1 ; 3.678 ; 3.678 ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[3]  ; synchronizer:comb_33|q1 ; 3.821 ; 3.821 ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[4]  ; synchronizer:comb_33|q1 ; 3.952 ; 3.952 ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[5]  ; synchronizer:comb_33|q1 ; 3.811 ; 3.811 ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[6]  ; synchronizer:comb_33|q1 ; 3.905 ; 3.905 ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[7]  ; synchronizer:comb_33|q1 ; 3.986 ; 3.986 ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[8]  ; synchronizer:comb_33|q1 ; 3.504 ; 3.504 ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[9]  ; synchronizer:comb_33|q1 ; 3.659 ; 3.659 ; Rise       ; synchronizer:comb_33|q1 ;
++-----------+-------------------------+-------+-------+------------+-------------------------+
+
+
++--------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                              ;
++-----------+-------------------------+-------+-------+------------+-------------------------+
+; Data Port ; Clock Port              ; Rise  ; Fall  ; Clock Edge ; Clock Reference         ;
++-----------+-------------------------+-------+-------+------------+-------------------------+
+; HEX0[*]   ; synchronizer:comb_33|q1 ; 5.466 ; 5.466 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX0[0]  ; synchronizer:comb_33|q1 ; 5.513 ; 5.513 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX0[1]  ; synchronizer:comb_33|q1 ; 5.577 ; 5.577 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX0[2]  ; synchronizer:comb_33|q1 ; 5.466 ; 5.466 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX0[3]  ; synchronizer:comb_33|q1 ; 5.468 ; 5.468 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX0[4]  ; synchronizer:comb_33|q1 ; 5.602 ; 5.602 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX0[5]  ; synchronizer:comb_33|q1 ; 5.597 ; 5.597 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX0[6]  ; synchronizer:comb_33|q1 ; 5.547 ; 5.547 ; Rise       ; synchronizer:comb_33|q1 ;
+; HEX1[*]   ; synchronizer:comb_33|q1 ; 5.523 ; 5.523 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX1[0]  ; synchronizer:comb_33|q1 ; 5.917 ; 5.917 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX1[1]  ; synchronizer:comb_33|q1 ; 5.523 ; 5.523 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX1[2]  ; synchronizer:comb_33|q1 ; 6.030 ; 6.030 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX1[3]  ; synchronizer:comb_33|q1 ; 5.679 ; 5.679 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX1[4]  ; synchronizer:comb_33|q1 ; 5.983 ; 5.983 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX1[5]  ; synchronizer:comb_33|q1 ; 6.325 ; 6.325 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX1[6]  ; synchronizer:comb_33|q1 ; 5.838 ; 5.838 ; Rise       ; synchronizer:comb_33|q1 ;
+; LEDR[*]   ; synchronizer:comb_33|q1 ; 3.504 ; 3.504 ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[0]  ; synchronizer:comb_33|q1 ; 3.651 ; 3.651 ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[1]  ; synchronizer:comb_33|q1 ; 3.520 ; 3.520 ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[2]  ; synchronizer:comb_33|q1 ; 3.678 ; 3.678 ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[3]  ; synchronizer:comb_33|q1 ; 3.821 ; 3.821 ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[4]  ; synchronizer:comb_33|q1 ; 3.952 ; 3.952 ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[5]  ; synchronizer:comb_33|q1 ; 3.811 ; 3.811 ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[6]  ; synchronizer:comb_33|q1 ; 3.905 ; 3.905 ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[7]  ; synchronizer:comb_33|q1 ; 3.986 ; 3.986 ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[8]  ; synchronizer:comb_33|q1 ; 3.504 ; 3.504 ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[9]  ; synchronizer:comb_33|q1 ; 3.659 ; 3.659 ; Rise       ; synchronizer:comb_33|q1 ;
++-----------+-------------------------+-------+-------+------------+-------------------------+
+
+
++----------------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                                    ;
++--------------------------+---------+--------+----------+---------+---------------------+
+; Clock                    ; Setup   ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
++--------------------------+---------+--------+----------+---------+---------------------+
+; Worst-case Slack         ; -3.574  ; -1.320 ; -1.163   ; 0.869   ; -1.631              ;
+;  CLOCK_50                ; -0.242  ; -1.320 ; N/A      ; N/A     ; -1.631              ;
+;  synchronizer:comb_33|q1 ; -3.574  ; 0.215  ; -1.163   ; 0.869   ; -0.611              ;
+; Design-wide TNS          ; -27.117 ; -1.32  ; -18.532  ; 0.0     ; -29.737             ;
+;  CLOCK_50                ; -0.331  ; -1.320 ; N/A      ; N/A     ; -8.963              ;
+;  synchronizer:comb_33|q1 ; -26.786 ; 0.000  ; -18.532  ; 0.000   ; -20.774             ;
++--------------------------+---------+--------+----------+---------+---------------------+
+
+
++--------------------------------------------------------------------------------------------+
+; Setup Times                                                                                ;
++-----------+-------------------------+-------+-------+------------+-------------------------+
+; Data Port ; Clock Port              ; Rise  ; Fall  ; Clock Edge ; Clock Reference         ;
++-----------+-------------------------+-------+-------+------------+-------------------------+
+; KEY[*]    ; CLOCK_50                ; 4.888 ; 4.888 ; Rise       ; CLOCK_50                ;
+;  KEY[0]   ; CLOCK_50                ; 4.888 ; 4.888 ; Rise       ; CLOCK_50                ;
+;  KEY[1]   ; CLOCK_50                ; 3.718 ; 3.718 ; Rise       ; CLOCK_50                ;
+; SW[*]     ; synchronizer:comb_33|q1 ; 3.760 ; 3.760 ; Rise       ; synchronizer:comb_33|q1 ;
+;  SW[0]    ; synchronizer:comb_33|q1 ; 3.760 ; 3.760 ; Rise       ; synchronizer:comb_33|q1 ;
++-----------+-------------------------+-------+-------+------------+-------------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Hold Times                                                                                   ;
++-----------+-------------------------+--------+--------+------------+-------------------------+
+; Data Port ; Clock Port              ; Rise   ; Fall   ; Clock Edge ; Clock Reference         ;
++-----------+-------------------------+--------+--------+------------+-------------------------+
+; KEY[*]    ; CLOCK_50                ; -1.593 ; -1.593 ; Rise       ; CLOCK_50                ;
+;  KEY[0]   ; CLOCK_50                ; -2.145 ; -2.145 ; Rise       ; CLOCK_50                ;
+;  KEY[1]   ; CLOCK_50                ; -1.593 ; -1.593 ; Rise       ; CLOCK_50                ;
+; SW[*]     ; synchronizer:comb_33|q1 ; 0.574  ; 0.574  ; Rise       ; synchronizer:comb_33|q1 ;
+;  SW[0]    ; synchronizer:comb_33|q1 ; 0.574  ; 0.574  ; Rise       ; synchronizer:comb_33|q1 ;
++-----------+-------------------------+--------+--------+------------+-------------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                        ;
++-----------+-------------------------+--------+--------+------------+-------------------------+
+; Data Port ; Clock Port              ; Rise   ; Fall   ; Clock Edge ; Clock Reference         ;
++-----------+-------------------------+--------+--------+------------+-------------------------+
+; HEX0[*]   ; synchronizer:comb_33|q1 ; 18.093 ; 18.093 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX0[0]  ; synchronizer:comb_33|q1 ; 17.921 ; 17.921 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX0[1]  ; synchronizer:comb_33|q1 ; 18.055 ; 18.055 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX0[2]  ; synchronizer:comb_33|q1 ; 17.710 ; 17.710 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX0[3]  ; synchronizer:comb_33|q1 ; 17.737 ; 17.737 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX0[4]  ; synchronizer:comb_33|q1 ; 18.086 ; 18.086 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX0[5]  ; synchronizer:comb_33|q1 ; 18.093 ; 18.093 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX0[6]  ; synchronizer:comb_33|q1 ; 17.976 ; 17.976 ; Rise       ; synchronizer:comb_33|q1 ;
+; HEX1[*]   ; synchronizer:comb_33|q1 ; 16.708 ; 16.708 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX1[0]  ; synchronizer:comb_33|q1 ; 13.290 ; 13.290 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX1[1]  ; synchronizer:comb_33|q1 ; 15.110 ; 15.110 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX1[2]  ; synchronizer:comb_33|q1 ; 16.116 ; 16.116 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX1[3]  ; synchronizer:comb_33|q1 ; 15.441 ; 15.441 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX1[4]  ; synchronizer:comb_33|q1 ; 16.344 ; 16.344 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX1[5]  ; synchronizer:comb_33|q1 ; 16.708 ; 16.708 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX1[6]  ; synchronizer:comb_33|q1 ; 13.274 ; 13.274 ; Rise       ; synchronizer:comb_33|q1 ;
+; LEDR[*]   ; synchronizer:comb_33|q1 ; 7.772  ; 7.772  ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[0]  ; synchronizer:comb_33|q1 ; 7.036  ; 7.036  ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[1]  ; synchronizer:comb_33|q1 ; 6.700  ; 6.700  ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[2]  ; synchronizer:comb_33|q1 ; 7.068  ; 7.068  ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[3]  ; synchronizer:comb_33|q1 ; 7.413  ; 7.413  ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[4]  ; synchronizer:comb_33|q1 ; 7.615  ; 7.615  ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[5]  ; synchronizer:comb_33|q1 ; 7.410  ; 7.410  ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[6]  ; synchronizer:comb_33|q1 ; 7.658  ; 7.658  ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[7]  ; synchronizer:comb_33|q1 ; 7.772  ; 7.772  ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[8]  ; synchronizer:comb_33|q1 ; 6.677  ; 6.677  ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[9]  ; synchronizer:comb_33|q1 ; 7.054  ; 7.054  ; Rise       ; synchronizer:comb_33|q1 ;
++-----------+-------------------------+--------+--------+------------+-------------------------+
+
+
++--------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                              ;
++-----------+-------------------------+-------+-------+------------+-------------------------+
+; Data Port ; Clock Port              ; Rise  ; Fall  ; Clock Edge ; Clock Reference         ;
++-----------+-------------------------+-------+-------+------------+-------------------------+
+; HEX0[*]   ; synchronizer:comb_33|q1 ; 5.466 ; 5.466 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX0[0]  ; synchronizer:comb_33|q1 ; 5.513 ; 5.513 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX0[1]  ; synchronizer:comb_33|q1 ; 5.577 ; 5.577 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX0[2]  ; synchronizer:comb_33|q1 ; 5.466 ; 5.466 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX0[3]  ; synchronizer:comb_33|q1 ; 5.468 ; 5.468 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX0[4]  ; synchronizer:comb_33|q1 ; 5.602 ; 5.602 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX0[5]  ; synchronizer:comb_33|q1 ; 5.597 ; 5.597 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX0[6]  ; synchronizer:comb_33|q1 ; 5.547 ; 5.547 ; Rise       ; synchronizer:comb_33|q1 ;
+; HEX1[*]   ; synchronizer:comb_33|q1 ; 5.523 ; 5.523 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX1[0]  ; synchronizer:comb_33|q1 ; 5.917 ; 5.917 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX1[1]  ; synchronizer:comb_33|q1 ; 5.523 ; 5.523 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX1[2]  ; synchronizer:comb_33|q1 ; 6.030 ; 6.030 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX1[3]  ; synchronizer:comb_33|q1 ; 5.679 ; 5.679 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX1[4]  ; synchronizer:comb_33|q1 ; 5.983 ; 5.983 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX1[5]  ; synchronizer:comb_33|q1 ; 6.325 ; 6.325 ; Rise       ; synchronizer:comb_33|q1 ;
+;  HEX1[6]  ; synchronizer:comb_33|q1 ; 5.838 ; 5.838 ; Rise       ; synchronizer:comb_33|q1 ;
+; LEDR[*]   ; synchronizer:comb_33|q1 ; 3.504 ; 3.504 ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[0]  ; synchronizer:comb_33|q1 ; 3.651 ; 3.651 ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[1]  ; synchronizer:comb_33|q1 ; 3.520 ; 3.520 ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[2]  ; synchronizer:comb_33|q1 ; 3.678 ; 3.678 ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[3]  ; synchronizer:comb_33|q1 ; 3.821 ; 3.821 ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[4]  ; synchronizer:comb_33|q1 ; 3.952 ; 3.952 ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[5]  ; synchronizer:comb_33|q1 ; 3.811 ; 3.811 ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[6]  ; synchronizer:comb_33|q1 ; 3.905 ; 3.905 ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[7]  ; synchronizer:comb_33|q1 ; 3.986 ; 3.986 ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[8]  ; synchronizer:comb_33|q1 ; 3.504 ; 3.504 ; Rise       ; synchronizer:comb_33|q1 ;
+;  LEDR[9]  ; synchronizer:comb_33|q1 ; 3.659 ; 3.659 ; Rise       ; synchronizer:comb_33|q1 ;
++-----------+-------------------------+-------+-------+------------+-------------------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                               ;
++-------------------------+-------------------------+----------+----------+----------+----------+
+; From Clock              ; To Clock                ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-------------------------+-------------------------+----------+----------+----------+----------+
+; CLOCK_50                ; CLOCK_50                ; 3        ; 0        ; 0        ; 0        ;
+; synchronizer:comb_33|q1 ; CLOCK_50                ; 1        ; 1        ; 0        ; 0        ;
+; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 275      ; 0        ; 0        ; 0        ;
++-------------------------+-------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                ;
++-------------------------+-------------------------+----------+----------+----------+----------+
+; From Clock              ; To Clock                ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-------------------------+-------------------------+----------+----------+----------+----------+
+; CLOCK_50                ; CLOCK_50                ; 3        ; 0        ; 0        ; 0        ;
+; synchronizer:comb_33|q1 ; CLOCK_50                ; 1        ; 1        ; 0        ; 0        ;
+; synchronizer:comb_33|q1 ; synchronizer:comb_33|q1 ; 275      ; 0        ; 0        ; 0        ;
++-------------------------+-------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++----------------------------------------------------------------------------------+
+; Recovery Transfers                                                               ;
++------------+-------------------------+----------+----------+----------+----------+
+; From Clock ; To Clock                ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+-------------------------+----------+----------+----------+----------+
+; CLOCK_50   ; synchronizer:comb_33|q1 ; 34       ; 0        ; 0        ; 0        ;
++------------+-------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++----------------------------------------------------------------------------------+
+; Removal Transfers                                                                ;
++------------+-------------------------+----------+----------+----------+----------+
+; From Clock ; To Clock                ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+-------------------------+----------+----------+----------+----------+
+; CLOCK_50   ; synchronizer:comb_33|q1 ; 34       ; 0        ; 0        ; 0        ;
++------------+-------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 3     ; 3    ;
+; Unconstrained Input Port Paths  ; 10    ; 10   ;
+; Unconstrained Output Ports      ; 24    ; 24   ;
+; Unconstrained Output Port Paths ; 101   ; 101  ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sat Jun 04 21:31:04 2022
+Info: Command: quartus_sta lab4 -c lab4
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'lab4.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name synchronizer:comb_33|q1 synchronizer:comb_33|q1
+    Info (332105): create_clock -period 1.000 -name CLOCK_50 CLOCK_50
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -3.574
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -3.574       -26.786 synchronizer:comb_33|q1 
+    Info (332119):    -0.242        -0.331 CLOCK_50 
+Info (332146): Worst-case hold slack is -1.320
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.320        -1.320 CLOCK_50 
+    Info (332119):     0.445         0.000 synchronizer:comb_33|q1 
+Info (332146): Worst-case recovery slack is -1.163
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.163       -18.532 synchronizer:comb_33|q1 
+Info (332146): Worst-case removal slack is 1.557
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     1.557         0.000 synchronizer:comb_33|q1 
+Info (332146): Worst-case minimum pulse width slack is -1.631
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.631        -8.963 CLOCK_50 
+    Info (332119):    -0.611       -20.774 synchronizer:comb_33|q1 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -0.771
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.771        -5.081 synchronizer:comb_33|q1 
+    Info (332119):     0.474         0.000 CLOCK_50 
+Info (332146): Worst-case hold slack is -0.775
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.775        -0.775 CLOCK_50 
+    Info (332119):     0.215         0.000 synchronizer:comb_33|q1 
+Info (332146): Worst-case recovery slack is -0.089
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.089        -1.002 synchronizer:comb_33|q1 
+Info (332146): Worst-case removal slack is 0.869
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.869         0.000 synchronizer:comb_33|q1 
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380        -7.380 CLOCK_50 
+    Info (332119):    -0.500       -17.000 synchronizer:comb_33|q1 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4538 megabytes
+    Info: Processing ended: Sat Jun 04 21:31:05 2022
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
